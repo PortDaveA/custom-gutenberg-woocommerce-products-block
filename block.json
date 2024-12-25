@@ -1,0 +1,13 @@
+{
+    "apiVersion": 2,
+    "name": "woo-products-block/products",
+    "title": "WooCommerce Products",
+    "category": "widgets",
+    "icon": "cart",
+    "description": "A block that displays WooCommerce products dynamically.",
+    "supports": {
+      "html": false
+    },
+    "editorScript": "file:./build/index.js"
+  }
+  
