@@ -18,3 +18,29 @@ require_once plugin_dir_path( __FILE__ ) . 'includes/class-render-block.php'; //
 // Use names spaces from the afforementioned. 
 use WooProductsBlock\RegisterBlock;
 use WooProductsBlock\RenderBlock;
+
+
+//Main class
+
+class Woo_Products_Block_Plugin {
+
+  
+    public function __construct() {
+        add_action( 'init', [ $this, 'initialize_plugin' ] );
+    }
+
+   
+    public function initialize_plugin() {
+        // Create an instance of our RenderBlock class (for rendering products).
+        $render_block  = new RenderBlock();
+
+        // Create an instance of our RegisterBlock class (to register the block).
+        $register_block = new RegisterBlock( $render_block );
+
+       //Register afforementioned block. 
+        $register_block->register();
+    }
+}
+
+
+new Woo_Products_Block_Plugin();
